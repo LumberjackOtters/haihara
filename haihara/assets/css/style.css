@@ -25,18 +25,18 @@
     --fieldset-border-color: #c0c0c0;
    
     /* Theme */
-    --primary: #0025C8;
+    --primary: #135589;
     --secondary: #f0f0f0;
-    --accent: #FB0007;
+    --accent: #0C8A7D;
 
 
-    --background-color: #f0f0f0;
+    --background-color: #EDFAFD;
     --background-color-accent: #f8f8f8;
     --background-selection: rgba(0, 0, 0, 0.2);
     --color: #3B3B3B;
     --color-accent: #333333;
     --hover-links: var(--accent);
-    --white: #ffffff;
+    --white: #FFFFFF;
     --table-background: #F3F3F3;
     --table-th: var(--accent);
     --pre-border: #cccccc;
@@ -44,9 +44,9 @@
     --white-gradient: rgba(255,255,255,0.82);
     --black-gradient: rgba(0,0,0,0.2);
 
-    --primary-font-family: "sofia-pro", "Roboto", sans-serif;
-    --secondary-font-family: "ropa-soft-pro", "Roboto Condensed", sans-serif;
-    --tertiary-font-family: "dienstag", "Montserrat", sans-serif;
+    --primary-font-family: "Montserrat", "sofia-pro", "Roboto", sans-serif;
+    --secondary-font-family: "Spartan", "ropa-soft-pro", "Roboto Condensed", sans-serif;
+    --tertiary-font-family: "Josefin Slab", "dienstag", "Montserrat", sans-serif;
 }
 
 /* ==========================================================================
@@ -149,9 +149,12 @@ td, th{ padding: 0; }
 
 body{
     font-family: var(--primary-font-family);
-    background: var(--background-color);
     color: var(--color);
     font-weight: 400;
+    background: url(/assets/img/back/final/SL-051919-20420-14-svg.svg);
+    background-size: contain;
+    background-color: var(--background-color);
+    background-blend-mode: color-burn;
 }
 
 a{
@@ -345,8 +348,8 @@ input{
 }
 
 input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0px 1000px var(--background-color) inset;
-    box-shadow: 0 0 0px 1000px var(--background-color) inset;
+    border: var(--accent) solid;
+    border-width: 0 0 1px 1px;
 }
 
 input::-ms-clear {
@@ -363,7 +366,6 @@ input::-ms-clear {
     color: var(--primary);
     padding: 12px 15px;
     border-radius: 0;
-    box-shadow: 1px 1px 1px 0 var(--black-gradient);
     border: 2px solid var(--primary);
     background: transparent;
     position: relative;
@@ -431,12 +433,58 @@ input::-ms-clear {
     letter-spacing: 3px;
     line-height: 25px;
     text-transform: uppercase;
-    display: inline-block;
+    display: inline-flex;
     margin-top: auto;
+    border: 1px solid var(--accent);
+    border-left: none;
+    border-bottom: none;
+    box-sizing: border-box;
+    width: auto;
+    height: auto;
+    position: relative;
+    align-items: center;
+    z-index: 0;
 }
 
 .read-more:hover{
     color: var(--primary);
+    border-color: var(--primary);
+}
+
+.read-more::before, .read-more::after {
+  position: absolute;
+  background: var(--white);
+  z-index: -1;
+  transition: 1s;
+  content: '';
+}
+
+.read-more::before {
+  height: 102%;
+  width: 100%;
+}
+
+.read-more::after {
+  width: 102%;
+  height: 100%;
+}
+
+.read-more:hover::before {
+  width: 0px;
+}
+
+.read-more:hover::after {
+  height: 0px;
+}
+
+
+.read-more {
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }
 
 .view-all{
@@ -842,7 +890,8 @@ body.search-visible .nav-trigger{
     width: calc(50% - 15px);
     margin-bottom: 30px;
     display: flex;
-    box-shadow: 0 1px 1px 0 var(--black-gradient);
+    border: var(--accent) solid;
+    border-width: 0 0 1px 1px;
 }
 
 .post-card .content{
@@ -1188,6 +1237,8 @@ body.search-visible .nav-trigger{
 .post-card-big{
     width: 100%;
     text-align: left;
+    border: var(--accent) solid;
+    border-width: 0 0 1px 1px;
 }
 
 .post-card-big .img-holder{
@@ -1241,6 +1292,7 @@ body.search-visible .nav-trigger{
     background: transparent;
     box-shadow: none;
     margin-bottom: 0;
+    border: none;
 }
 
 .post-card-small .content .content-holder{
@@ -1662,7 +1714,6 @@ body.search-visible .nav-trigger{
 .comments #disqus_thread{
     background: var(--white);
     padding: 30px;
-    box-shadow: 0 10px 46px 0 var(--black-gradient);
     border-radius: 10px;
     margin-top: -10px;
     display: none;
@@ -1984,11 +2035,12 @@ body.search-visible .nav-trigger{
     margin: 0;
     padding: 0;
     list-style-type: none;
+    border: solid var(--accent);
+    border-width: 1px 1px 0 0;
 }
 
 .widget ul li{
     background: linear-gradient(0deg, var(--background-color) 0%, var(--background-color-accent) 100%);
-    box-shadow: inset 0 1px 1px 0 var(--white-gradient), 0 1px 1px 0 var(--black-gradient);
     padding: 20px 25px;
     margin: 0 0 1px 0;
     position: relative;
@@ -2005,7 +2057,6 @@ body.search-visible .nav-trigger{
 
 .widget .ads-container{
     background: linear-gradient(0deg, var(--background-color) 0%, var(--background-color-accent) 100%);
-    box-shadow: inset 0 1px 1px 0 var(--white-gradient), 0 1px 1px 0 var(--black-gradient);
     padding: 20px 25px;
     margin: 0 0 1px 0;
     position: relative;
@@ -2021,7 +2072,6 @@ body.search-visible .nav-trigger{
 
 .top-authors.widget ul{
     background: linear-gradient(0deg, var(--background-color) 0%, var(--background-color-accent) 100%);
-    box-shadow: inset 0 1px 1px 0 var(--white-gradient), 0 1px 1px 0 var(--black-gradient);
     padding: 36px 25px 0 25px;
     margin: 0 0 1px 0;
     text-align: center;
@@ -2029,6 +2079,8 @@ body.search-visible .nav-trigger{
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+    border: solid var(--accent);
+    border-width: 1px 1px 0 0;
 }
 
 .top-authors.widget ul li{
@@ -2049,6 +2101,7 @@ body.search-visible .nav-trigger{
     padding: 20px 25px;
     display: flex;
     position: relative;
+    text-transform: uppercase;
 }
 
 .top-tags.widget ul li a i{
@@ -2302,7 +2355,7 @@ footer .tags li{
 }
 
 footer .tags li a{
-    text-transform: lowercase;
+    text-transform: uppercase;
 }
 
 footer form button[type="submit"], .gh-signin button[type="submit"]{

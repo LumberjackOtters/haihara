@@ -1,5 +1,5 @@
 {
-    "name": "haihara",
+    "name": "otterwiseth",
     "description": "If you are a busy publisher we are pleased to inform that this theme is a little monster that feeds on content for lunch, supper and dinner. You have been warned...",
     "demo": "https://haihara.hauntedthemes.com/",
     "version": "2.1.0",
@@ -44,7 +44,7 @@
         "custom": {
             "primary": {
                 "type": "color",
-                "default": "#0025C8"
+                "default": "#135589"
             },
             "secondary": {
                 "type": "color",
@@ -52,19 +52,19 @@
             },
             "accent": {
                 "type": "color",
-                "default": "#FB0007"
+                "default": "#0C8A7D"
             },
             "primary_font": {
                 "type": "text",
-                "default": "\"sofia-pro\", \"Roboto\", sans-serif"
+                "default": "\"Montserrat\", \"sofia-pro\", \"Roboto\", sans-serif"
             },
             "secondary_font": {
                 "type": "text",
-                "default": "\"ropa-soft-pro\", \"Roboto Condensed\", sans-serif"
+                "default": "\"Spartan\", \"ropa-soft-pro\", \"Roboto Condensed\", sans-serif"
             },
             "tertiary_font": {
                 "type": "text",
-                "default": "\"dienstag\", \"Montserrat\", sans-serif"
+                "default": "\"Josefin Slab\", \"dienstag\", \"Montserrat\", sans-serif"
             },
             "api_host": {
                 "type": "text",
@@ -77,6 +77,18 @@
             "advertise": {
                 "type": "boolean",
                 "default": true
+            },
+            "instagram": {
+                "type": "text",
+                "default": ""
+            },
+            "linkedin": {
+                "type": "text",
+                "default": ""
+            },
+            "youtube": {
+                "type": "text",
+                "default": ""
             }
         }
     }
